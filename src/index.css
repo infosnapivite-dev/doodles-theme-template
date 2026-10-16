@@ -1,0 +1,154 @@
+@import url('./styles/iphone-mockup.css');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-canvas-pink: #EFCFD4;
+  --color-paper-cream: #FDFBF7;
+  --color-ink-black: #232323;
+  --color-accent-coral: #D66865;
+  --color-coral-tint: rgba(214, 104, 101, 0.12);
+  
+  /* Dress code swatches */
+  --color-pitch-black: #141414;
+  --color-deep-olive: #3D4327;
+  --color-warm-taupe: #B59E88;
+  --color-soft-cream: #EBE4D8;
+
+  /* Typography */
+  --font-display: 'Amatic SC', cursive;
+  --font-script: 'Caveat', cursive;
+  --font-hand: 'Indie Flower', cursive;
+  --font-doodle: 'Patrick Hand', cursive;
+  --font-marker: 'Nothing You Could Do', cursive;
+}
+
+body {
+  font-family: var(--font-script), cursive;
+  color: var(--color-ink-black);
+  background-color: var(--color-canvas-pink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Master Anti-Flicker & Performance Rules */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, opacity;
+}
+
+/* Authentic Tactile Handmade Cotton Paper Texture */
+.paper-surface {
+  background-color: var(--color-paper-cream);
+  background-image:
+    /* Layer 1: Fine organic paper grain noise */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.14  0 0 0 0 0.14  0 0 0 0 0.14  0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E"),
+    /* Layer 2: Subtle fibrous flecks of cotton paper */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='fibers'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.04' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5  0 0 0 0 0.35  0 0 0 0 0.3  0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23fibers)'/%3E%3C/svg%3E"),
+    /* Layer 3: Warm subtle watercolor wash and tone */
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.7) 0%, transparent 55%),
+    radial-gradient(circle at 82% 88%, rgba(239, 207, 212, 0.22) 0%, transparent 50%),
+    linear-gradient(180deg, #FDFBF7 0%, #FAF6EE 50%, #FDFBF7 100%);
+  background-size: 160px 160px, 280px 280px, 100% 100%, 100% 100%, 100% 100%;
+  position: relative;
+  box-shadow: inset 0 0 35px rgba(214, 104, 101, 0.04), inset 0 0 16px rgba(35, 35, 35, 0.025);
+}
+
+.paper-surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibers'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibers)' opacity='0.045'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+/* Custom hand-drawn button */
+.doodle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 20px;
+  background-color: #FDFBF7;
+  color: #232323;
+  border: 1.5px solid #232323;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  outline: none;
+}
+
+.doodle-btn:hover {
+  background-color: #FFF6F6;
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 2px 4px 12px rgba(214, 104, 101, 0.18);
+}
+
+.doodle-btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+
+
+/* Enhanced organic hand-drawn floating keyframes */
+@keyframes doodleFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+  }
+  30% {
+    transform: translateY(-8px) translateX(3px) rotate(3deg) scale(1.04);
+  }
+  65% {
+    transform: translateY(-14px) translateX(-3px) rotate(-3deg) scale(1.08);
+  }
+  85% {
+    transform: translateY(-4px) translateX(2px) rotate(1deg) scale(1.02);
+  }
+}
+
+.animate-doodle-float {
+  animation: doodleFloat 4.2s ease-in-out infinite;
+}
+
+@keyframes pulseGently {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-gentle {
+  animation: pulseGently 2.4s ease-in-out infinite;
+}
