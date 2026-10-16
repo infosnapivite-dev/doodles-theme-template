@@ -298,19 +298,19 @@ export default function ScheduleSection({ isVisible = true }) {
           >
             <motion.div
               className="event-modal-card gpu-accelerated"
-              initial={{ scale: 0.88, opacity: 0, y: 16 }}
+              initial={{ scale: 0.9, opacity: 0, y: 12 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 12 }}
+              exit={{ scale: 0.9, opacity: 0, y: 10 }}
               transition={{ type: 'spring', damping: 24, stiffness: 320 }}
               onClick={(e) => e.stopPropagation()}
               style={{
                 width: '100%',
                 maxWidth: '295px',
                 maxHeight: '520px',
-                backgroundColor: '#FDFBF7',
-                border: '2px solid #232323',
+                backgroundColor: '#FFFFFF',
+                border: '1.8px solid #232323',
                 borderRadius: '12px',
-                boxShadow: '0 12px 32px rgba(35, 35, 35, 0.16), 4px 6px 0px rgba(35, 35, 35, 0.9)',
+                boxShadow: 'none',
                 padding: '18px 14px 14px 14px',
                 position: 'relative',
                 display: 'flex',
@@ -470,7 +470,7 @@ export default function ScheduleSection({ isVisible = true }) {
                   border: '1.5px solid #232323',
                   borderRadius: '20px',
                   padding: '5px 18px',
-                  boxShadow: '1.5px 2px 0px rgba(35, 35, 35, 0.8)',
+                  boxShadow: 'none',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
